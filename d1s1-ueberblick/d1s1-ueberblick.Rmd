@@ -107,6 +107,30 @@ name: welcome
 
 
 ---
+# Vorstellungsrunde
+
+
+.pull-left[
+### Über Euch
+
+`r fa('address-book')` Euer Name
+
+`r fa('envelope')` Eure Behörde und Rolle
+
+`r fa('graduation-cap')` Was erhofft Ihr Euch vom Modul? Maximal 3 Wörter!
+]
+
+.pull-right[
+<br><br>
+<div align="center">
+<img src="../pics/aa-data.png" width=400>
+</div>
+]
+
+
+
+
+---
 # Onboarding-Befragung
 
 <div align="center">
@@ -215,21 +239,24 @@ name: whatisdatascience
 - Praktisch alle KI-Modelle sind ohne Daten nutzlos.
 - Das "I" in KI bezieht sich in der Regel darauf, dass die Modelle **lernen** können, d.h. auf variablen Input angemessen reagieren.
 
-
-]
-
-.pull-right[
 ## Data Science 
 
 - Überbegriff für Methoden und Technologien, die auch KI mit einschließen.
 - Aber auch Methoden zur Datenerhebung, -verarbeitung, -modellierung, -visualisierung, -kommunikation, -archivierung.
 - Damit bereitet Data Science die essentielle Grundlage für KI-Anwendungen.
+
 ]
 
+.pull-right[
+<br>
+<br>
 <div align="center">
 <img src="../pics/AI-DS-ML-2.jpeg" height=275>
 <a href="https://www.ejable.com/tech-corner/ai-machine-learning-and-deep-learning/data-science-artificial-intelligence-and-machine-learning/">Ekta Shah, EJable</a>
 </div>
+]
+
+
 
 
 
@@ -471,27 +498,6 @@ background-color: #000000
 
 `Quelle` [H. Wickham, M. Çetinkaya-Rundel, G. Gronemund: R for Data Science](https://r4ds.hadley.nz/)
 ]
-
-
----
-# Anforderungen in der Industrie
-
-<div align="center">
-<img src="../pics/linkedin-ds-data-skills.png" width=900>
-</div>
-
-`Quelle` Eigene Darstellung; Daten: doi.org/10.34740/kaggle/dsv/8217982; scraped „Data Scientist“ job postings from LinkedIn; n=4,342; countries: US, UK, CA, AU
-
----
-# Anforderungen in der Industrie II
-
-<div align="center">
-<img src="../pics/linkedin-ds-other-skills.png" width=900>
-</div>
-
-`Quelle` Eigene Darstellung; Daten: doi.org/10.34740/kaggle/dsv/8217982; scraped „Data Scientist“ job postings from LinkedIn; n=4,342; countries: US, UK, CA, AU
-
-
 
 
 ---

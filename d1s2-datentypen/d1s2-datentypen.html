@@ -51,11 +51,9 @@ class: center, middle, inverse, title-slide
 
 2. [Datenformat: JSON](#json)
 
-3. [Relationale Datenstrukturen](#relationaldata)
+3. [Datentypen und Anwendungen](#datatypes)
 
-4. [Datentypen und Anwendungen](#datatypes)
-
-5. [Ihre Daten](#yourdata)
+4. [Ihre Daten](#yourdata)
 
 
 ---
@@ -240,7 +238,7 @@ name: datatypes
 
 - was sie abbilden (welche Art von Information, z.B. Text, Bild, Geodaten, Netzwerkdaten)
 
-Und nach vielem mehr (Beständigkeit, Digitalisierung, etc.). Für uns eher relevant: Welche **Datentypen** sind **im Data-Science- und AI-Kontext** besonders relevant und wie wir sie verwenden?
+Und nach vielem mehr (Beständigkeit, Digitalisierung, etc.). Für uns eher relevant: Welche **Datentypen** sind **im Data-Science- und AI-Kontext** besonders relevant und wie machen wir sie nutzbar?
 ]
 
 .pull-right-small[
@@ -316,6 +314,9 @@ name: json
 ---
 # Beispiel
 
+.pull-left[
+## Daten in JSON-Format
+
 ```{}
 [
    {
@@ -335,6 +336,34 @@ name: json
    }
 ]
 ```
+]
+
+.pull-right[
+## JSON Daten in R-Datentabelle überführt
+
+``` r
+R&gt; library(jsonlite)
+R&gt; json_dat &lt;- 
++ '[{  "name" : "van Pelt, Lucy",
++       "sex" : "weiblich",
++       "age" : 32},
++    {  "name" : "Peppermint, Patty",
++       "sex" : "weiblich",
++       "age" : null},
++    {  "name" : "Brown, Charlie",
++       "sex" : "männlich",
++       "age" : 27}
++ ]'
+R&gt; fromJSON(json_dat, flatten = TRUE)
+```
+
+```
+##                name      sex age
+## 1    van Pelt, Lucy weiblich  32
+## 2 Peppermint, Patty weiblich  NA
+## 3    Brown, Charlie männlich  27
+```
+]
 
 ---
 # Grundsyntax
@@ -437,345 +466,6 @@ R&gt; fromJSON(x)
 
 
 
----
-class: inverse, center, middle
-name: relationaldata
-
-# Relationale Datenstrukturen
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
-
-
----
-# Die Allgegenwärtigkeit von relationalen Datenstrukturen
-
-.pull-left-wide[
-### Von Tabellen...
-
-- Wenn Sie an Daten auf Ihrem Laptop denken, haben Sie möglicherweise ein [Spreadsheet](https://de.wikipedia.org/wiki/Tabellenkalkulation) im Kopf.
-- In der Tat arbeitet ein Großteil der klassischen "statistischen" Software (SPSS, Stata, MS Excel) standardmäßig mit Spreadsheets als Dateninput.
-- Gleichzeitig ist einer Ihrer ersten Gedanken möglicherweise auch [dateibasiert](https://en.wikipedia.org/wiki/List_of_file_formats). Die Daten werden in Dateien gespeichert, und diese Dateien werden von unserer Datenverwaltungssoftware gelesen (und erstellt).
-- In vielen Fällen ist eine **zweidimensionale Datenstruktur** sinnvoll. Wir nutzen zum Beispiel
-  - Befragte x Einstellungen
-  - Bezirke x Merkmale
-  - Beiträge in sozialen Medien x Textmerkmale
-]
-
-.pull-right-small[
-&lt;br&gt;&lt;br&gt;
-&lt;div align="center"&gt;
-&lt;img src="../pics/clippy-message.jpeg" height=200&gt; 
-&lt;/div&gt;
-]
-
-
----
-
-# Die Allgegenwärtigkeit von mehrdimensionalen Datenstrukturen
-
-.pull-left-small2[
-&lt;div align="center"&gt;
-&lt;img src="../pics/legislator-structure.png" height=520&gt;
-&lt;/div&gt;
-`Credit` [saschagobel/legislatoR](https://github.com/saschagobel/legislatoR)
-]
-
-.pull-right-wide2[
-### ... zu komplexen Datenstrukturen
-
-- Je länger man jedoch darüber nachdenkt, desto problematischer wird es, Daten systematisch in zweidimensionalen Strukturen abzulegen.
-- **Beispiele**:
-  - Befragte x Einstellungen x Länder x Zeit
-  - Bezirke x Unterbezirke Merkmale x Zeit
-  - Beiträge in sozialen Medien x Retweets x Benutzer x Benutzereigenschaften x Netzwerkmerkmale x Metadaten
-- Die Abbildung von dreidimensionalen auf zweidimensionale Strukturen ist technisch einfach machbar.
-- Bei **vielfachen heterogenen Datenquellen** wird es unübersichtlich.
-- Die Verwaltung komplexer Datenstrukturen ist nur ein Vorteil der Verwendung von **Datenbanken**.
-]
-
-
----
-
-# Wann Datenbanken nützlich werden
-
-.pull-left[
-### Größe und Struktur
-- Sie haben **Datenmengen, die den Arbeitsspeicher** auf Ihrem Computer übersteigen. Datenbanken sind nur durch die verfügbare Festplattengröße begrenzt (oder können auf mehrere Festplatten/Rechner verteilt werden).
-- Ihre **Datenstruktur ist komplex**. Datenbanken erlauben es, Daten mit komplexen Datenstrukturen zu speichern, abzurufen und zu untergliedern.
-- Ihre Daten sind groß und Sie müssen **häufig darauf zugreifen/daraus filtern**. Die Abfrage von Datenbanken ist schnell.
-- Sie legen Wert auf **Datenqualität** und haben klare Vorstellungen, wie Daten aussehen sollen. Mit Hilfe von Datenbanken können Sie spezifische Regeln für die Erweiterung und Aktualisierung Ihrer Datenbank definieren.
-]
-
---
-
-.pull-right[
-### Zugänglichkeit und Gleichzeitigkeit
-- Sie **arbeiten gemeinsam mit anderen** an einem Datenprojekt Mit einer Datenbank haben Sie eine gemeinsame, zuverlässige Infrastruktur zur Verfügung, auf die mehrere Benutzer gleichzeitig zugreifen können.
-- Wenn mehrere Parteien beteiligt sind, können Nutzerprivilegien wichtig sein (z. B. nur Lesezugriff, Zugriff auf Teile der Daten, eingeschränkte Verwaltungsrechte usw.). Die meisten Datenbanken erlauben die **Definition unterschiedlicher Nutzungsrechte für verschiedene Benutzer**.
-]
-
-
----
-# Codds relationales Modell für Datenbanken
-
-.pull-left[
-- Das Konzept relationaler Datenbanken baut auf dem [relational model (RM)](https://en.wikipedia.org/wiki/Relational_model) auf, das 1969/1970 von [Edgar F. "Ted" Codd](https://en.wikipedia.org/wiki/Edgar_F._Codd) vorgeschlagen wurde.
-- Codd beschrieb das RM formal, führte es aber auch mit Konzepten ein, die auch heute noch verwendet werden (Normalisierung, Schlüssel, Joins, usw.).
-- Die Grundannahme des relationalen Modells ist, dass alle Daten als Relationen (Tabellen) dargestellt werden können.
-- Informationen werden dann durch in Beziehung stehende Datenwerte dargestellt.
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/edgar-codd.jpeg" height=150&gt;
-&lt;/div&gt;
-]
-
-
-.pull-right-center[
-&lt;div align="center"&gt;
-&lt;img src="../pics/codd-relational-model.png" height=500&gt;
-&lt;/div&gt;
-`Credit` [Communications of the ACM 13(6), 1970](https://dl.acm.org/doi/10.1145/362384.362685)
-]
-
-
----
-# Tabellarische Daten: Beispiel
-
-.pull-left[
-### Speicherung von Daten in Tabellen
-
-- Eine einzige Tabelle stellt bereits Beziehungen her: Alle Daten in einer Zeile gehören zu demselben Datensatz.
-- Wenn wir komplexere Beziehungen darstellen wollen (z. B. das Gewicht einer Person zweimal messen oder das Gewicht ihrer Kinder ebenfalls messen), können wir Daten von einer Tabelle zur anderen in Beziehung setzen.
-
-### Beispiel
-
-- Wir haben Daten über Peter, Paul und Mary gesammelt.
-- Wir haben Informationen über Geburtstage, Telefonnummern und Lieblingsspeisen.
-- Wie können wir diese Informationen in Tabellen darstellen?
-]
-
---
-
-.pull-right[
-&lt;div align="center"&gt;
-&lt;img src="../pics/adcr-relational-data-1.png" width=600&gt;
-&lt;/div&gt;
-&lt;div align="center"&gt;
-&lt;img src="../pics/adcr-relational-data-2.png" width=300&gt;
-&lt;/div&gt;
-
-- Wir beginnen mit der Darstellung der Daten in zwei Tabellen.
-- Sie sind über den Schlüssel `nameid` verknüpft, so dass wir die vollständigen Namen nicht in die Tabelle der Telefonnummern aufnehmen müssen.
-- Beachten Sie, dass wir hier eine 1:m (one-to-many) Beziehung haben, da Peter zwei Telefonnummern hat.
-]
-
----
-# Tabellarische Daten: Beispiel
-
-.pull-left[
-### Speicherung von Daten in Tabellen
-
-- Eine einzige Tabelle stellt bereits Beziehungen her: Alle Daten in einer Zeile gehören zu demselben Datensatz.
-- Wenn wir komplexere Beziehungen darstellen wollen (z. B. das Gewicht einer Person zweimal messen oder das Gewicht ihrer Kinder ebenfalls messen), können wir Daten von einer Tabelle zur anderen in Beziehung setzen.
-
-### Beispiel
-
-- Wir haben Daten über Peter, Paul und Mary gesammelt.
-- Wir haben Informationen über Geburtstage, Telefonnummern und Lieblingsspeisen.
-- Wie können wir diese Informationen in Tabellen darstellen?
-]
-
-.pull-right[
-&lt;div align="center"&gt;
-&lt;img src="../pics/adcr-relational-data-1.png" width=600&gt;
-&lt;/div&gt;
-&lt;div align="center"&gt;
-&lt;img src="../pics/adcr-relational-data-2.png" width=300&gt;
-&lt;/div&gt;
-
-- Die Art und Weise, wie wir die Daten speichern, ist jedoch nicht ideal. In der ersten Tabelle haben wir drei Spalten, die praktisch das Gleiche messen. Und was, wenn es noch mehr Lieblingsessen gibt? Das Hinzufügen von Informationen auf diese Weise führt zu einer Menge redundanter Informationen.
-- Wir können die Daten normalisieren, um Redundanzen zu vermeiden.
-]
-
-
----
-# Tabellarische Daten: Beispiel
-
-.pull-left[
-### Speicherung von Daten in Tabellen
-
-- Eine einzige Tabelle stellt bereits Beziehungen her: Alle Daten in einer Zeile gehören zu demselben Datensatz.
-- Wenn wir komplexere Beziehungen darstellen wollen (z. B. das Gewicht einer Person zweimal messen oder das Gewicht ihrer Kinder ebenfalls messen), können wir Daten von einer Tabelle zur anderen in Beziehung setzen.
-
-### Beispiel
-
-- Wir haben Daten über Peter, Paul und Mary gesammelt.
-- Wir haben Informationen über Geburtstage, Telefonnummern und Lieblingsspeisen.
-- Wie können wir diese Informationen in Tabellen darstellen?
-]
-
-.pull-right[
-&lt;div align="center"&gt;
-&lt;img src="../pics/adcr-relational-data-3.png" width=300&gt;
-&lt;/div&gt;
-
-- Besser ist es, die Informationen aufzuteilen und eine weitere Tabelle für die Essenspräferenzen zu erstellen.
-- Es bleibt immer noch etwas Redundanz übrig. Ist es wirklich notwendig, "Hamburger" zweimal in der Tabelle zu haben?
-]
-
-
----
-# Tabellarische Daten: Beispiel
-
-.pull-left[
-### Speicherung von Daten in Tabellen
-
-- Eine einzige Tabelle stellt bereits Beziehungen her: Alle Daten in einer Zeile gehören zu demselben Datensatz.
-- Wenn wir komplexere Beziehungen darstellen wollen (z. B. das Gewicht einer Person zweimal messen oder das Gewicht ihrer Kinder ebenfalls messen), können wir Daten von einer Tabelle zur anderen in Beziehung setzen.
-
-### Beispiel
-
-- Wir haben Daten über Peter, Paul und Mary gesammelt.
-- Wir haben Informationen über Geburtstage, Telefonnummern und Lieblingsspeisen.
-- Wie können wir diese Informationen in Tabellen darstellen?
-]
-
-.pull-right[
-&lt;div align="center"&gt;
-&lt;img src="../pics/adcr-relational-data-4.png" width=300&gt;
-&lt;/div&gt;
-&lt;div align="center"&gt;
-&lt;img src="../pics/adcr-relational-data-5.png" width=300&gt;
-&lt;/div&gt;
-
-- Jetzt ist es besser.
-- Bei der Umstrukturierung der Informationen in unserer Datenbank haben wir **Redundanz (Duplikation)** vermieden.
-- Dies ist der Prozess der **Datenbanknormalisierung**.
-]
-
-
----
-# Was ist SQL?
-
-### Hintergrund und Geschichte
-
-- SQL (ausgesprochen [ɛsˌkjuːˈɛl] wie in S-Q-L, oder [siːkwəl] wie in sequel) steht für **Structured Query Language**. Ursprünglich hieß sie SEQUEL (Structured English Query Language), wurde aber aufgrund von Markenrechtsproblemen fallen gelassen.
-- Es handelt sich um eine domänenspezifische Sprache, die für die Abfrage von Daten in relationalen Datenbanken entwickelt wurde.
-- Ursprünglich wurde sie 1974 bei IBM von [Donald D. Chamberlin](https://en.wikipedia.org/wiki/Donald_D._Chamberlin) und [Raymond F. Boyce](https://en.wikipedia.org/wiki/Raymond_F._Boyce) entwickelt.
-
---
-
-### Warum SQL?
-
-- Es gibt zwar unterschiedliche Datenbanktypen, aber die meisten relationalen Datenbanken, denen Sie begegnen werden, sprechen SQL.
-- Die wichtigste Fähigkeit für die Arbeit mit Datenbanken ist das Erlernen von SQL. 
-- SQL wird in vielen (den meisten?) Stellenausschreibungen für Datenwissenschaftler als erforderliche Fähigkeit aufgeführt.
-
-
-
----
-
-# Datenbanken und Datenbankmanagementsysteme
-
-### Was sind Datenbanken?
-
-- Datenbanken sind eine organisierte Sammlung von Daten.
-- Sie sind so organisiert, dass sie ein effizientes Abrufen von Daten(-selektionen) ermöglichen.
-- Sie enthalten Daten + Metadaten über Struktur und Organisation.
-- Der Zugriff auf sie erfolgt im Allgemeinen über ein Datenbankmanagementsystem.
-
-### Wo sind Datenbanken?
-
-- Datenbanken können lokal oder dezentral, im Arbeitsspeicher oder auf der Festplatte existieren.
-- Wenn sie lokal gespeichert sind, werden sie als Binärdatei (nicht als Textdatei) gespeichert.
-- Im Allgemeinen denken wir an ein **Client-Server-Modell**:
-  - Datenbanken befinden sich auf einem **Server**, der sie verwaltet.
-  - Die Benutzer interagieren mit dem Server über ein **Client**-Programm.
-  - Mehrere Benutzer können **auf dieselbe Datenbank **gleichzeitig** zugreifen.
-
-
-
----
-# Datenbanken und Datenbankmanagementsysteme
-
-.pull-left-wide[
-### Was sind DBMS?
-
-- Datenbankmanagementsysteme (DBMS) bieten **effiziente**, **zuverlässige**, **bequeme**, **sichere** Speicherung von und Zugriff auf **massive** Daten.
-    - **Effizient**: Einfach schnell.
-    - **Zuverlässig**: Hohe Betriebszeit.
-    - **Komfortabel**: Hochwertige Abfragesprachen.
-    - **Sicher**: Robust gegenüber Stromausfällen, Knotenausfällen, usw.
-    - **Mehrbenutzer**: Gleichzeitigkeitskontrolle. Nicht nur ein Benutzer, sondern mehrere.
-    - **Massiv**: Denken Sie an Terabytes, nicht an Gigabytes. Verarbeitung von Daten, die sich außerhalb des Speichers befinden.
-- Es gibt [etliche DBMS](https://en.wikipedia.org/wiki/List_of_relational_database_management_systems) allein für relationale Datenbankstrukturen.
-- RDBMS unterscheiden sich in Bezug auf Fähigkeiten, implementierte Funktionen, Betriebssystemunterstützung und vieles mehr. Siehe [The Database Database](https://technically.dev/database-database) für einen Überblick.
-]
-
-.pull-right-small[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="../pics/mysql-logo.png" height=120&gt;
-&lt;img src="../pics/postgresql-logo.png" height=150&gt;
-&lt;img src="../pics/sqlite-logo.png" height=110&gt;
-&lt;img src="../pics/duckdb-logo.png" height=50&gt;
-&lt;/div&gt;
-
-]
-
----
-# Datenbanken und Datenbankmanagementsysteme (Forts.)
-
-### Drei Grundformen von DBMS
-
-- **Client-Server-DBMS**: Läuft auf einem leistungsstarken zentralen Server, den Sie von Ihrem Computer (dem Client) aus ansteuern. Ideal für die gemeinsame Nutzung von Daten durch mehrere Personen in einer Organisation. Beliebte Client-Server-DBMS sind PostgreSQL, MariaDB, SQL Server und Oracle.
-- **Cloud DBMS**: Ähnlich wie Client-Server-DBMS, aber sie werden in der Cloud ausgeführt. Das bedeutet, dass sie problemlos extrem große Datenmengen verarbeiten und bei Bedarf automatisch mehr Rechenressourcen bereitstellen können. Beliebte Beispiele: Snowflake, RedShift von Amazon und BigQuery von Google.
-- **Eingebettetes (prozessinternes) DBMS**: Werden vollständig auf Ihrem Computer oder innerhalb einer Anwendung ausgeführt. Sie eignen sich hervorragend für die Arbeit mit großen Datensätzen, bei denen Sie der Hauptnutzer sind. Beispiele: SQLite oder [DuckDB](https://duckdb.org/).
-
-### Weitere nützliche Ressourcen für den Einstieg in das Thema Datenbanken
-
-Einen guten Einstieg bietet [The Beginner's Guide to Databases](https://technically.substack.com/p/the-beginners-guide-to-databases).
-
-Außerdem [Awesome MySQL](https://github.com/shlomi-noach/awesome-mysql), eine Goldgrube für die Arbeit mit MySQL.
-
-
-
-
----
-# Weshalb Datenbanken im Verwaltungskontext wichtig sind
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/excel-error-paper-2.jpeg" height="500"/&gt;
-&lt;img src="../pics/excel-error-paper.png" height="500"/&gt;
-&lt;/div&gt;
-
-Eine [Fallstudie der City University London](https://blogs.city.ac.uk/cityshortcourses/2020/10/13/what-really-caused-the-excel-error-in-nhs-test-and-trace-covid-19-system-an-in-depth-technical-analysis/) zu dem Vorfall.
-
-
-
----
-# Weshalb SQL-Skills wichtig sind
-
-.pull-left-center[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="../pics/fb-socsci1-1.png" width="550"/&gt;
-&lt;img src="../pics/fb-socsci1-2.png" width="550"/&gt;
-&lt;img src="../pics/fb-socsci1-3.png" width="550"/&gt;
-&lt;/div&gt;
-`Source` [Washington Post](https://www.washingtonpost.com/technology/2021/09/10/facebook-error-data-social-scientists/)
-]
-
-
-.pull-right-center[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="../pics/fb-socsci1-4.png" width="450"/&gt;
-&lt;img src="../pics/fb-socsci1-5.png" width="450"/&gt;
-&lt;/div&gt;
-`Source` [Solomon Messing / Twitter](https://twitter.com/solomonmg/status/1436742352039669760)
-]
-
-
 
 ---
 class: inverse, center, middle
@@ -791,7 +481,7 @@ name: datatypes
 .pull-left-wide2[
 ## "Your AI Pair Programmer"
 - [GitHub Copilot](https://en.wikipedia.org/wiki/GitHub_Copilot) ist ein KI-gestütztes Tool, das Entwickler/innen beim Schreiben von Code unterstützt.
-- Es wurde von GitHub und OpenAI entwickelt und basiert auf der GPT-3-Technologie.
+- Es wurde von GitHub und OpenAI entwickelt und basierte ursprünglich auf GPT-3.
 - Copilot kann Codevorschläge machen, die auf dem Kontext des Codes basieren, den Sie gerade schreiben.
 - Es kann auch ganze Funktionen schreiben, wenn man eine Beschreibung gibt (🖥️ Demonstration).
 - Copilot ist in der Lage, in vielen verschiedenen Programmiersprachen zu arbeiten.
