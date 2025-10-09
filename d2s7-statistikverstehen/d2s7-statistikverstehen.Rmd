@@ -1061,3 +1061,18 @@ Entdecken Sie die Zukunft der Verwaltung mit OptiClassify – sparen Sie Zeit, K
 
 
 
+
+---
+class: exercise, center, middle
+
+# Data Detective, Fall 4: AnkER-Zentren
+
+.content-box-white[
+<div align="center">
+<img src="../pics/Fall_3_QR.png" width=350>
+</div>
+]
+
+
+
+

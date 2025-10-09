@@ -70,6 +70,146 @@ library(fontawesome)
 
 ---
 class: inverse, center, middle
+name: exercise
+
+# Übung
+<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
+
+
+---
+# Umgang mit Evidenz als Detektivarbeit
+
+.pull-left-wide[
+## Der Ansatz
+
+- Auswertung von Daten ist wie Detektivarbeit
+- Wir müssen die **Evidenz genau unter die Lupe nehmen**, um herauszufinden, ob der Verdächtige - der vermutete Zusammenhang, der deskriptive Befund - tatsächlich hält, was er verspricht
+- Dazu müssen wir versuchen **Alternativerklärungen auszuschließen**
+
+## Die Ausstattung
+
+- **Unsere Toolbox:** Kritisches Denken, Beobachtung (Datenerhebung), Wahrnehmung (Messung), externes Wissen, statistische Methoden
+- Ohne qualitative Beurteilung sind die quantitativen Werkzeuge häufig ohne Wert
+]
+
+
+.pull-right-small[
+<div align="center">
+<br>
+<img src="../pics/sherlock-rathbone.jpeg" height=400>
+</div>
+]
+
+---
+# Ein paar einfache Fälle
+
+<br>
+
+.pull-left[
+## Drückende Schuhe (?)
+
+> Umfrageergebnisse zeigen, dass Menschen, die mit Schuhen schlafen, viel häufiger mit Kopfschmerzen aufwachen.
+
+## Gezuckerte Getränke führen zu Fettleibigkeit (?)
+
+> Personen, die regelmäßig zuckerhaltige Getränke konsumieren, haben einen 30% höheren BMI.
+
+]
+
+.pull-right[
+
+
+## Lock-downs haben COVID-19-bedingte Tode herbeigeführt (?)
+
+> Europäische Länder, die strengere und längere Lock-downs hatten, hatten höhere COVID-19-Todesraten.
+
+
+## UN-Friedensmissionen schützen die Zivilbevölkerung nicht (?)
+
+> UN-Friedensmissionen in Bürgerkriegsszenarien sind stark positiv mit höheren Todesraten unter Zivilisten korreliert
+
+]
+
+
+
+---
+# Daten-Tatort I: Erkennen von Straftätern durch Gesichtsdaten
+
+<div align="center">
+<img src="../pics/criminal-faces-1.png" width=600>
+</div>
+
+
+---
+# Weitere Evidenz: Erkennen von Straftätern durch Gesichtsdaten
+
+<div align="center">
+<img src="../pics/criminal-faces-2.png" width=600>
+</div>
+
+
+---
+# Weitere Evidenz: Erkennen von Straftätern durch Gesichtsdaten
+
+<div align="center"><br>
+<img src="../pics/criminal-faces-3.png" width=500>
+<img src="../pics/criminal-faces-4.png" width=500>
+</div>
+
+
+---
+# Lösung des Falles
+
+.pull-left-wide[
+
+|                       	| Evidenz und Schlüsse                           	|
+|-----------------------	|----------------------------------------------------	|
+| **Der Tatort**   	| Gesichter sagen Straftäter vorher                 	|
+| **Die Verdächtigen**    	| Lifestyle, Physiognomik |
+| **Die Tatwaffe** 	| Konfundierung in Datenerhebung (biased training set)                    	|
+
+> "Extraordinary claims require extraordinary evidence. The authors of this paper make the extraordinary claim that facial structure reveals criminal tendencies. We have argued that, given all publicly available information, their findings can be explained by a much more reasonable hypothesis: non-criminals are more likely to be smiling in photos chosen for publicity purposes than are criminals in the ID photos (not mugshots) chosen by police departments for wanted posters and other purposes. Notice that we did all of this without digging into the details of the machine learning algorithms at all. We didn’t need to. We know that a machine learning algorithm is only as good as its training data, and we can see that the training set used here is fundamentally flawed for the purpose it is used." <div align="right">Carl Bergstrom and Jevin West, <a href="https://callingbullshit.org/case_studies/case_study_criminal_machine_learning.html">Calling Bullshit</a><sup>1</sup></div>
+]
+
+.pull-right-small[
+<div align="center">
+<br>
+<img src="../pics/physiognomics-lombroso.png" width=400>
+</div>
+
+`Quelle` [Bergstrom/West, Calling Bullshit](https://callingbullshit.org)
+]
+
+
+---
+class: exercise, center, middle
+
+# Data Detective, Fall 2: Predictive Policing
+
+.content-box-white[
+<div align="center">
+<img src="../pics/Fall_1_QR.png" width=350>
+</div>
+]
+
+
+---
+class: exercise, center, middle
+
+# Data Detective, Fall 3: SARS-CoV-2-Abwassermonitoring
+
+.content-box-white[
+<div align="center">
+<img src="../pics/Fall_5_QR.png" width=350>
+</div>
+]
+
+
+
+
+
+---
+class: inverse, center, middle
 name: whatisbigdata
 
 # Was ist Big Data?
@@ -285,7 +425,7 @@ name: bigdataparadox
 
 .pull-right[
 <div align="center"><br><br>
-<img src="../pics/bradley-unrepresentative-big-surveys-vaccine-2.png" height=340>
+<img src="../pics/bradley-unrepresentative-big-surveys-vaccine-2.png" height=300>
 </div>
 ]
 
@@ -324,7 +464,7 @@ name: bigdataparadox
 --
 
 .pull-right[
-## Korrektur endlicher Grundgesamtheiten zur Rettung?
+## Besserung durch Korrektur für endliche Grundgesamtheiten?
 
 - Die Intuition sagt uns, dass die Wahrscheinlichkeit eines Fehlers geringer sein sollte, wenn der Stichprobenumfang im Verhältnis zum Umfang der Grundgesamtheit groß ist.
 - Das stimmt auch, aber der Zugewinn ist relativ langsam.
@@ -521,194 +661,6 @@ name: garbageingarbageout
 </div>
 `Quelle` XKCD, [2295](https://xkcd.com/2295/), ([hier erklärt](https://www.explainxkcd.com/wiki/index.php/2295:_Garbage_Math))
 ]
-
-
----
-class: inverse, center, middle
-name: exercise
-
-# Übung
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
-
-
----
-# Umgang mit Evidenz als Detektivarbeit
-
-.pull-left-wide[
-## Der Ansatz
-
-- Auswertung von Daten ist wie Detektivarbeit
-- Wir müssen die **Evidenz genau unter die Lupe nehmen**, um herauszufinden, ob der Verdächtige - der vermutete Zusammenhang, der deskriptive Befund - tatsächlich hält, was er verspricht
-- Dazu müssen wir versuchen **Alternativerklärungen auszuschließen**
-
-## Die Ausstattung
-
-- **Unsere Toolbox:** Kritisches Denken, Beobachtung (Datenerhebung), Wahrnehmung (Messung), externes Wissen, statistische Methoden
-- Ohne qualitative Beurteilung sind die quantitativen Werkzeuge häufig ohne Wert
-]
-
-
-.pull-right-small[
-<div align="center">
-<br>
-<img src="../pics/sherlock-rathbone.jpeg" height=400>
-</div>
-]
-
----
-# Ein paar einfache Fälle
-
-<br>
-
-.pull-left[
-## Drückende Schuhe (?)
-
-> Umfrageergebnisse zeigen, dass Menschen, die mit Schuhen schlafen, viel häufiger mit Kopfschmerzen aufwachen.
-
-## Gezuckerte Getränke führen zu Fettleibigkeit (?)
-
-> Personen, die regelmäßig zuckerhaltige Getränke konsumieren, haben einen 30% höheren BMI.
-
-]
-
-.pull-right[
-
-
-## Lock-downs haben COVID-19-bedingte Tode herbeigeführt (?)
-
-> Europäische Länder, die strengere und längere Lock-downs hatten, hatten höhere COVID-19-Todesraten.
-
-
-## UN-Friedensmissionen schützen die Zivilbevölkerung nicht (?)
-
-> UN-Friedensmissionen in Bürgerkriegsszenarien sind stark positiv mit höheren Todesraten unter Zivilisten korreliert
-
-]
-
-
-
----
-# Daten-Tatort I: Erkennen von Straftätern durch Gesichtsdaten
-
-<div align="center">
-<img src="../pics/criminal-faces-1.png" width=600>
-</div>
-
-
----
-# Weitere Evidenz: Erkennen von Straftätern durch Gesichtsdaten
-
-<div align="center">
-<img src="../pics/criminal-faces-2.png" width=600>
-</div>
-
-
----
-# Weitere Evidenz: Erkennen von Straftätern durch Gesichtsdaten
-
-<div align="center"><br>
-<img src="../pics/criminal-faces-3.png" width=500>
-<img src="../pics/criminal-faces-4.png" width=500>
-</div>
-
-
----
-# Lösung des Falles
-
-.pull-left-wide[
-
-|                       	| Evidenz und Schlüsse                           	|
-|-----------------------	|----------------------------------------------------	|
-| **Der Tatort**   	| Gesichter sagen Straftäter vorher                 	|
-| **Die Verdächtigen**    	| Lifestyle, Physiognomik |
-| **Die Tatwaffe** 	| Konfundierung in Datenerhebung (biased training set)                    	|
-
-> "Extraordinary claims require extraordinary evidence. The authors of this paper make the extraordinary claim that facial structure reveals criminal tendencies. We have argued that, given all publicly available information, their findings can be explained by a much more reasonable hypothesis: non-criminals are more likely to be smiling in photos chosen for publicity purposes than are criminals in the ID photos (not mugshots) chosen by police departments for wanted posters and other purposes. Notice that we did all of this without digging into the details of the machine learning algorithms at all. We didn’t need to. We know that a machine learning algorithm is only as good as its training data, and we can see that the training set used here is fundamentally flawed for the purpose it is used." <div align="right">Carl Bergstrom and Jevin West, <a href="https://callingbullshit.org/case_studies/case_study_criminal_machine_learning.html">Calling Bullshit</a><sup>1</sup></div>
-]
-
-.pull-right-small[
-<div align="center">
-<br>
-<img src="../pics/physiognomics-lombroso.png" width=400>
-</div>
-
-`Quelle` [Bergstrom/West, Calling Bullshit](https://callingbullshit.org)
-]
-
-
-
-
-
----
-# Daten-Tatort II: Sind bestimmte Musikgenres tödlicher als andere?
-
-.pull-left[
-<div align="center">
-<img src="../pics/musician_mortality.jpeg" height=430>
-</div>
-
-`Quelle` [The Conversation](https://theconversation.com/music-to-die-for-how-genre-affects-popular-musicians-life-expectancy-36660), `Hintergrund (mit Autoren-Replik)` [Calling Bullshit](https://callingbullshit.org/case_studies/case_study_musician_mortality.html)
-]
-
-.pull-right[
-> [Study author Dianna Kenny] found that musicians from older genres – including blues, jazz, country and gospel – have similar lifespans to American people their own age. The life expectancy for R&B musicians is slightly lower, while the life expectancy for newer genres like rock, techno, punk, metal, rap and hip hop is significantly shorter."
-
-<div align="right">Ana Swanson, <a href="https://www.washingtonpost.com/news/wonk/wp/2015/04/15/the-causes-of-musicians-deaths-by-genre/">Washington Post</a></div>
-
-> "It's a cautionary tale to some degree," Kenny told the Washington Post. "People who go into rap music or hip hop or punk, they're in a much more occupational hazard profession compared to war. We don't lose half our army in a battle."
-
-<div align="right">Dianna Kenny, <a href="https://www.washingtonpost.com/news/morning-mix/wp/2015/03/25/over-half-of-dead-hip-hop-artists-were-murdered-study-finds/">quoted by Washington Post</a></div>
-]
-
-
----
-# Weitere Evidenz
-
-.pull-left[
-<div align="center">
-<img src="../pics/musician_mortality2.jpeg" height=450>
-</div>
-]
-
---
-
-.pull-right[
-## Some issues
-
-1. **Sanity check:** Sind manche Genres wirklich so tödlich? Sterben z. B. Rap-Musiker wirklich mit einem Durchschnittsalter von ~30 Jahren?
-2. **Datenzensierung:** Einige Genres sind jünger als andere, und die Auswertung setzt voraus, dass die Musiker bereits gestorben sind. Die meisten Rap- und Hip-Hop-Stars sind heute noch am Leben - Lebensdauer unbekannt!
-3. **Bedingte Wahrscheinlichkeiten:** Die Wahrscheinlichkeiten der einzelnen Todesursachen hängen davon ab, dass der Tod zum Zeitpunkt der Untersuchung bereits eingetreten ist.
-4) (Kleineres Problem) Liniendiagramm für kategoriale Daten?  [Keine gute Idee.](https://www.jmp.com/en_gb/statistics-knowledge-portal/exploratory-data-analysis/line-graph.html#:~:text=Line%20graphs%20do%20not%20make,might%20have%20a%20defined%20order.)
-]
-
-
----
-# Lösung des Falles
-
-.pull-left[
-
-|                       	| Evidenz und Schlüsse                           	|
-|-----------------------	|----------------------------------------------------	|
-| **Der Tatort**   	| Musikgenre korreliert mit Todesalter                 	|
-| **Die Verdächtigen**    	| Lifestyle (z.B. Drogenkonsum), Alter des Genres, unvollständige Datenerhebung |
-| **Die Tatwaffe** 	| Konfundierung durch Daten-Zensur                              	|
-
-> "In other words, it's not that rap stars will likely die young; it's that the rap stars who have died certainly died young because rap hasn't been around long enough for it to be otherwise." <div align="right">Carl Bergstrom and Jevin West, <a href="https://callingbullshit.org/case_studies/case_study_musician_mortality.html">Calling Bullshit</a><sup>1</sup></div>
-
-<div class="font50"><br><br><sup>1</sup>Die Autorin Dianna Kenny hat mit einer plausiblen Antwort reagiert und auf eine <a href="http://dx.doi.org/10.21091/mppa.2016.1007">besser designte Studie verwiesen</a>, deren Evidenz konsistent mit den ursprünglichen Mustern zu sein scheint.</div>
-]
-
-.pull-right-center[
-<div align="center">
-<br>
-<b>Inspector Lestrade:</b><br>
-<img src="../pics/tikz/tikz-024.png" width=400>
-<br>
-<b>Sherlock:</b><br>
-<img src="../pics/tikz/tikz-025.png" width=400>
-</div>
-]
-
 
 
 
