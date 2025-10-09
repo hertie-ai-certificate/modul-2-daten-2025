@@ -373,7 +373,7 @@ Wahrscheinlichkeiten sind ...
 ## Base Rate Fallacy ("Prävalenzfehler")
 
 - Dies ist ein klassischer Fall des „Base Rate Fallacy“ oder „Prosecutor's Fallacy“.
-- Wenn die Impfrate $P(geimpft)$ in der Bevölkerung hoch ist, besteht für geimpfte Personen eine viel größere Chance, ins Krankenhaus zu kommen, als für ungeimpfte Personen.
+- Wenn die Impfrate $P(geimpft)$ in der Bevölkerung hoch ist, besteht eine möglicherweise höhere Chance, dass eine zufällig ausgewählte kranke Person (z.B. im Krankenhaus) geimpft als ungeimpft ist.
 ]
 
 .pull-right[
@@ -720,6 +720,100 @@ name: classification
 
 # Klassifikationsmetriken verstehen
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
+
+
+---
+# Vorhersage der Rückfälligkeit von Straftätern
+
+.pull-left[
+## Hintergrund
+
+- Correctional Offender Management Profiling for Alternative Sanctions (COMPAS) ist ein von Northpointe (jetzt Equivant) entwickeltes Entscheidungshilfeinstrument, das von US-Gerichten zur **Bewertung der Rückfallwahrscheinlichkeit** eingesetzt wird.
+- Erstellt mehrere Skalen (Risiko der vorzeitigen Entlassung, allgemeine Rückfälligkeit, gewalttätige Rückfälligkeit) auf der Grundlage von Faktoren wie Alter, Vorstrafen und Drogenmissbrauch
+- Der Algorithmus ist urheberrechtlich geschützt und seine inneren Abläufe sind nicht öffentlich.
+
+<br><br>
+
+`Quelle` [Leitfaden für Praktiker zum COMPAS Core](https://s3.documentcloud.org/documents/2840784/Practitioner-s-Guide-to-COMPAS-Core.pdf)
+]
+
+
+.pull-right[
+<div align="center">
+<img src="../pics/compas-scores.png" width=450>
+</div>
+]
+
+
+---
+# Vorhersage der Rückfälligkeit von Straftätern
+
+.pull-left[
+## Hintergrund
+
+- Correctional Offender Management Profiling for Alternative Sanctions (COMPAS) ist ein von Northpointe (jetzt Equivant) entwickeltes Entscheidungshilfeinstrument, das von US-Gerichten zur **Bewertung der Rückfallwahrscheinlichkeit** eingesetzt wird.
+- Erstellt mehrere Skalen (Risiko der vorzeitigen Entlassung, allgemeine Rückfälligkeit, gewalttätige Rückfälligkeit) auf der Grundlage von Faktoren wie Alter, Vorstrafen und Drogenmissbrauch
+- Der Algorithmus ist urheberrechtlich geschützt und seine inneren Abläufe sind nicht öffentlich.
+
+<br><br>
+
+`Quelle` [Leitfaden für Praktiker zum COMPAS Core](https://s3.documentcloud.org/documents/2840784/Practitioner-s-Guide-to-COMPAS-Core.pdf)
+]
+
+.pull-right[
+<div align="center">
+<img src="../pics/compas-practitioner-1.png" width=450>
+<img src="../pics/compas-practitioner-2.png" width=450>
+<img src="../pics/compas-practitioner-3.png" width=450>
+</div>
+]
+
+
+---
+# Vorhersage der Rückfälligkeit von Straftätern
+
+.pull-left[
+## Die ProPublica und andere Untersuchungen
+
+- Im Jahr 2016 veröffentlichte ProPublica eine Untersuchung, die zeigte, dass COMPAS **voreingenommen gegenüber Afroamerikanern** war
+- **Bias:** Der Algorithmus sagte bei Afroamerikanern mit höherer Wahrscheinlichkeit falsch voraus, dass Angeklagte wieder straffällig werden würden.
+- **Mangelnde Präzision:** Nur 20 % der Personen, denen Gewaltverbrechen vorhergesagt wurden, wurden tatsächlich straffällig (in einer späteren Studie wurde der Wert auf 65 % geschätzt - schlechter als eine Gruppe von Nicht-Experten)
+
+<br><br><br>
+`Quelle` [ProPublica 2016](https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm)
+]
+
+.pull-right[
+<div align="center">
+<img src="../pics/machine-bias-compas.png" width=430>
+</div>
+]
+
+
+---
+# Vorhersage der Rückfälligkeit von Straftätern
+
+.pull-left[
+## Die ProPublica und andere Untersuchungen
+
+- Im Jahr 2016 veröffentlichte ProPublica eine Untersuchung, die zeigte, dass COMPAS **voreingenommen gegenüber Afroamerikanern** war
+- **Bias:** Der Algorithmus sagte bei Afroamerikanern mit höherer Wahrscheinlichkeit falsch voraus, dass Angeklagte wieder straffällig werden würden.
+- **Mangelnde Präzision:** Nur 20 % der Personen, denen Gewaltverbrechen vorhergesagt wurden, wurden tatsächlich straffällig (in einer späteren Studie wurde der Wert auf 65 % geschätzt - schlechter als eine Gruppe von Nicht-Experten)
+
+<br><br>
+
+`Quelle` [Dressel and Fair, 2018, Science Advances](https://www.science.org/doi/epdf/10.1126/sciadv.aao5580)
+]
+
+.pull-right[
+<div align="center">
+<img src="../pics/dressel-compas-1.png" width=500>
+<img src="../pics/dressel-compas-2.png" width=385>
+</div>
+]
+
+
+
 
 
 ---

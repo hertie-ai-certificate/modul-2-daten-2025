@@ -111,7 +111,7 @@ Data Scientist, Data Analyst, Data Engineer, Machine Learning Engineer, AI Resea
 
 
 ---
-# Berufs- und Lernfeld Data Science
+# Lern- und Berufsfeld Data Science
 
 .pull-left[
 ## Berufsbilder im Bereich Data Science sind vielfältig

@@ -362,7 +362,7 @@ Wahrscheinlichkeiten sind ...
 ## Base Rate Fallacy ("Prävalenzfehler")
 
 - Dies ist ein klassischer Fall des „Base Rate Fallacy“ oder „Prosecutor's Fallacy“.
-- Wenn die Impfrate `\(P(geimpft)\)` in der Bevölkerung hoch ist, besteht für geimpfte Personen eine viel größere Chance, ins Krankenhaus zu kommen, als für ungeimpfte Personen.
+- Wenn die Impfrate `\(P(geimpft)\)` in der Bevölkerung hoch ist, besteht eine möglicherweise höhere Chance, dass eine zufällig ausgewählte kranke Person (z.B. im Krankenhaus) geimpft als ungeimpft ist.
 ]
 
 .pull-right[
@@ -712,6 +712,100 @@ name: classification
 
 
 ---
+# Vorhersage der Rückfälligkeit von Straftätern
+
+.pull-left[
+## Hintergrund
+
+- Correctional Offender Management Profiling for Alternative Sanctions (COMPAS) ist ein von Northpointe (jetzt Equivant) entwickeltes Entscheidungshilfeinstrument, das von US-Gerichten zur **Bewertung der Rückfallwahrscheinlichkeit** eingesetzt wird.
+- Erstellt mehrere Skalen (Risiko der vorzeitigen Entlassung, allgemeine Rückfälligkeit, gewalttätige Rückfälligkeit) auf der Grundlage von Faktoren wie Alter, Vorstrafen und Drogenmissbrauch
+- Der Algorithmus ist urheberrechtlich geschützt und seine inneren Abläufe sind nicht öffentlich.
+
+&lt;br&gt;&lt;br&gt;
+
+`Quelle` [Leitfaden für Praktiker zum COMPAS Core](https://s3.documentcloud.org/documents/2840784/Practitioner-s-Guide-to-COMPAS-Core.pdf)
+]
+
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/compas-scores.png" width=450&gt;
+&lt;/div&gt;
+]
+
+
+---
+# Vorhersage der Rückfälligkeit von Straftätern
+
+.pull-left[
+## Hintergrund
+
+- Correctional Offender Management Profiling for Alternative Sanctions (COMPAS) ist ein von Northpointe (jetzt Equivant) entwickeltes Entscheidungshilfeinstrument, das von US-Gerichten zur **Bewertung der Rückfallwahrscheinlichkeit** eingesetzt wird.
+- Erstellt mehrere Skalen (Risiko der vorzeitigen Entlassung, allgemeine Rückfälligkeit, gewalttätige Rückfälligkeit) auf der Grundlage von Faktoren wie Alter, Vorstrafen und Drogenmissbrauch
+- Der Algorithmus ist urheberrechtlich geschützt und seine inneren Abläufe sind nicht öffentlich.
+
+&lt;br&gt;&lt;br&gt;
+
+`Quelle` [Leitfaden für Praktiker zum COMPAS Core](https://s3.documentcloud.org/documents/2840784/Practitioner-s-Guide-to-COMPAS-Core.pdf)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/compas-practitioner-1.png" width=450&gt;
+&lt;img src="../pics/compas-practitioner-2.png" width=450&gt;
+&lt;img src="../pics/compas-practitioner-3.png" width=450&gt;
+&lt;/div&gt;
+]
+
+
+---
+# Vorhersage der Rückfälligkeit von Straftätern
+
+.pull-left[
+## Die ProPublica und andere Untersuchungen
+
+- Im Jahr 2016 veröffentlichte ProPublica eine Untersuchung, die zeigte, dass COMPAS **voreingenommen gegenüber Afroamerikanern** war
+- **Bias:** Der Algorithmus sagte bei Afroamerikanern mit höherer Wahrscheinlichkeit falsch voraus, dass Angeklagte wieder straffällig werden würden.
+- **Mangelnde Präzision:** Nur 20 % der Personen, denen Gewaltverbrechen vorhergesagt wurden, wurden tatsächlich straffällig (in einer späteren Studie wurde der Wert auf 65 % geschätzt - schlechter als eine Gruppe von Nicht-Experten)
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+`Quelle` [ProPublica 2016](https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/machine-bias-compas.png" width=430&gt;
+&lt;/div&gt;
+]
+
+
+---
+# Vorhersage der Rückfälligkeit von Straftätern
+
+.pull-left[
+## Die ProPublica und andere Untersuchungen
+
+- Im Jahr 2016 veröffentlichte ProPublica eine Untersuchung, die zeigte, dass COMPAS **voreingenommen gegenüber Afroamerikanern** war
+- **Bias:** Der Algorithmus sagte bei Afroamerikanern mit höherer Wahrscheinlichkeit falsch voraus, dass Angeklagte wieder straffällig werden würden.
+- **Mangelnde Präzision:** Nur 20 % der Personen, denen Gewaltverbrechen vorhergesagt wurden, wurden tatsächlich straffällig (in einer späteren Studie wurde der Wert auf 65 % geschätzt - schlechter als eine Gruppe von Nicht-Experten)
+
+&lt;br&gt;&lt;br&gt;
+
+`Quelle` [Dressel and Fair, 2018, Science Advances](https://www.science.org/doi/epdf/10.1126/sciadv.aao5580)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/dressel-compas-1.png" width=500&gt;
+&lt;img src="../pics/dressel-compas-2.png" width=385&gt;
+&lt;/div&gt;
+]
+
+
+
+
+
+---
 # AI-Performanz in Wissenstests
 
 &lt;div align="center"&gt;
@@ -1048,18 +1142,6 @@ Entdecken Sie die Zukunft der Verwaltung mit OptiClassify – sparen Sie Zeit, K
 
     ✎ Welche Hypothese liegt hier zugrunde? 
 
-
-
----
-class: exercise, center, middle
-
-# Data Detective, Fall 4: AnkER-Zentren
-
-.content-box-white[
-&lt;div align="center"&gt;
-&lt;img src="../pics/Fall_1_QR.png" width=350&gt;
-&lt;/div&gt;
-]
 
 
 
