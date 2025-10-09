@@ -34,7 +34,7 @@
 
 - [Ergänzende Folien des Kurses "Introduction to Data Science"](https://github.com/intro-to-data-science-25/lectures), Hertie School, 2025
 - [Skript zur Praxis-Session Web-Daten und APIs](https://raw.githack.com/hertie-ai-certificate/modul-2-daten-2025/main/%C3%BCbungsmaterialien/Session_4_Praxis_Webscraping_und_APIs.html)
-- [Skript zur Praxis-Session OCR und LLMs](https://raw.githack.com/hertie-ai-certificate/modul-2-daten-2025/main/%C3%BCbungsmaterialien/Session_6_Praxis%20OCR%20und%20LLMs.html
+- [Skript zur Praxis-Session OCR und LLMs](https://raw.githack.com/hertie-ai-certificate/modul-2-daten-2025/main/%C3%BCbungsmaterialien/Session_6_Praxis%20OCR%20und%20LLMs.html)
 - [Stellenausschreibungen Data Scientists in Behörden](https://github.com/hertie-ai-certificate/modul-2-daten-2025/tree/main/%C3%BCbungsmaterialien/ausschreibungen-service-bund-de)
 
 ## Zusammenfassung
